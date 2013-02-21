@@ -2,6 +2,7 @@ package edu.macalester.cs124;
 
 import java.awt.Color;
 
+import edu.macalester.generator.FibonacciGenerator;
 import edu.macalester.generator.PrimeGenerator;
 import edu.macalester.turtle.Turtle;
 import edu.macalester.turtle.TurtleProgram;
@@ -9,6 +10,7 @@ import edu.macalester.turtle.TurtleProgram;
 public class Spiral extends TurtleProgram {
     public void run() {
     	
+    	FibonacciGenerator fibo = new FibonacciGenerator();
     	PrimeGenerator prime = new PrimeGenerator(2);
         setTurtleSpeedFactor(0);
         
@@ -32,8 +34,8 @@ public class Spiral extends TurtleProgram {
         	else
         		turtle.setColor(Color.BLUE);
             turtle.forward(step);
-            turtle.left(70);
-            //follower[i % 4].moveToPoint(turtle.getX(), turtle.getY());
+            turtle.left(90);
+            follower[i % 4].moveToPoint(turtle.getX(), turtle.getY());
             step = prime.next();
         }
         remove(turtle);

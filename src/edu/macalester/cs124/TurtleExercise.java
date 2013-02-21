@@ -2,12 +2,13 @@ package edu.macalester.cs124;
 
 import java.awt.Color;
 
+import edu.macalester.generator.FibonacciGenerator;
 import edu.macalester.turtle.Turtle;
 import edu.macalester.turtle.TurtleProgram;
 
 public class TurtleExercise extends TurtleProgram {
     public void run() {
-        setTurtleSpeedFactor(1000);
+        setTurtleSpeedFactor(10);
         
         Turtle sally = new Turtle(200, 500, Color.MAGENTA);
         add(sally);
@@ -38,5 +39,9 @@ public class TurtleExercise extends TurtleProgram {
         fred.penDown();
         sally.left(90);
         sally.forward(2);
+        FibonacciGenerator fibo = new FibonacciGenerator();
+        for(int i = 0; i < 100; i++) {
+        	System.out.println(fibo.next());
+        }
     }
 }
