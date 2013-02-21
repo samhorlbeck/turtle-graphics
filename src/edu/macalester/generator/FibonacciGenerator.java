@@ -1,6 +1,6 @@
 package edu.macalester.generator;
 
-public class FibonacciGenerator {
+public class FibonacciGenerator implements Generator {
 	private double a;
 	private double b;
 	
@@ -13,6 +13,6 @@ public class FibonacciGenerator {
 		double nextNum = a + b;
 		a = b;
 		b = nextNum;
-		return b;
+		return a;
 	}
 }
