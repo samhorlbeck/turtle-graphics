@@ -72,6 +72,17 @@ public class Turtle {
     }
     
     /**
+     * Moves the turtle to the given x and y coordinate.
+     */
+    public void moveToPoint(double xIn, double yIn) {
+    	double x = xIn - getX();
+    	double y = yIn - getY();
+    	
+    	setDirection((Math.atan2(y, x)) * 180 / Math.PI);
+    	forward(Math.hypot(x, y));
+    }
+    
+    /**
      * Moves the turtle forward by an arbitrary multiplier of the current step size.
      * Draws a line segment if the pen is down.
      */
